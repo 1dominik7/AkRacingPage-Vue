@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Bershire+Swash&family=Roboto:wght@100;300;500;700');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --primary: #e4002b;
+  --second: #3ab7f7;
+  --third: #fd5749;
+  --bgColor: #090909;
+}
+
+h1,h2,h4,p{
+  color: #ffffff;
+}
+
+body {
+  position: relative;
+  background: var(--bgColor);
+  font-family: 'Roboto', 'sans-serif';
+  width: 100%;
+  min-height: 90vh;
+  margin-bottom: 10px;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+section {
+  position: relative;
+  padding: 50px 0 60px;
+  padding-left: 5%;
+  width: 100%;
+  min-height: 100vh;
+  transition: ease-in-out 1s;
+  transform-origin: bottom;
+  z-index: 900;
+}
+
+section .section-title {
+  position: relative;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+section .section-title::after {
+  position: absolute;
+  content: '';
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -30px;
+  height: 3px;
+  width: 50%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary),
+    var(--primary),
+    transparent
+  );
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding-left: 15%;
+  }
+}
