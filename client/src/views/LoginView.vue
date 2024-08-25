@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <h2>Login</h2>
-    <div class="loginForm">
+    <form @submit.prevent="handleSubmit" class="loginForm">
       <div class="formContainer">
         <div class="warnings" v-if="validationErrors.length > 0">
           <ul>
@@ -22,13 +22,13 @@
           <input type="password" id="password" v-model="userInfo.password" />
         </div>
       </div>
-      <button @click="handleSubmit" class="submit" :disabled="busy">
+      <button  type="submit" class="submit" :disabled="busy">
         Sign In
       </button>
       <router-link to="/register" class="createAccountNav"
         >Create account</router-link
       >
-    </div>
+    </form>
     <div class="lottieContainer" v-if="busy">
       <LoadingAnimation />
     </div>
@@ -54,7 +54,8 @@ const router = useRouter();
 
 const authStore = useAuthStore();
 
-const handleSubmit = async () => {
+const handleSubmit = async (e) => {
+  e.preventDefault()
   busy.value = true;
   validationErrors.value = [];
 

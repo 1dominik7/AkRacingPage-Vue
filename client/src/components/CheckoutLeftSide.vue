@@ -540,7 +540,8 @@ const luhnCheck = (cardNumber) => {
   return sum % 10 === 0;
 };
 
-const submit = async () => {
+const submit = async (e) => {
+  e.preventDefault();
   const hasErrors = validateForm();
 
   if (!hasErrors) {

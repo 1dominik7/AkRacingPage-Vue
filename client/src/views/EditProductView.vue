@@ -474,7 +474,8 @@ const uploadImages = async (images, chunkSize = 5000000) => {
   return uploadedImages;
 };
 
-const EditProduct = async () => {
+const EditProduct = async (e) => {
+  e.preventDefault()
   loading.value = true;
 
   try {

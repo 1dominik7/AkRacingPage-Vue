@@ -127,7 +127,8 @@ const selectCountry = (country) => {
   openCountrySelector.value = false;
 };
 
-const updateAddress = async () => {
+const updateAddress = async (e) => {
+  e.preventDefault()
   if (!editForm.value._id) {
     console.error("Error: Address ID is missing.");
     return;

@@ -148,7 +148,8 @@ const clearForm = () => {
   isDefault.value = false;
 };
 
-const addAddress = async () => {
+const addAddress = async (e) => {
+  e.preventDefault()
   const address = {
     firstName: form.value.firstName,
     lastName: form.value.lastName,

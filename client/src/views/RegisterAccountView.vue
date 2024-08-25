@@ -1,7 +1,7 @@
 <template>
   <div class="registerAccount">
     <h2>Create Account</h2>
-    <div class="formContainer">
+    <form @submit.prevent="handleSubmit" class="formContainer">
       <div class="warnings" v-if="validationErrors.length > 0">
         <ul>
           <li v-for="(error, index) in validationErrors" :key="index">
@@ -27,10 +27,10 @@
         <router-link class="loginRoute" to="/login">Login</router-link>
         <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
       </div>
-      <button class="createButton" @click="handleSubmit" :disabled="busy">
+      <button class="createButton" type="submit" :disabled="busy">
         Create
       </button>
-    </div>
+    </form>
   </div>
 </template>
 
@@ -52,7 +52,8 @@ const errorMessage = ref("");
 
 const router = useRouter();
 
-const handleSubmit = async () => {
+const handleSubmit = async (e) => {
+  e.preventDefault()
   busy.value = true;
   validationErrors.value = [];
 

@@ -407,7 +407,8 @@ const validateFields = () => {
   return !errors.value.name && !errors.value.price;
 };
 
-const submitProduct = async () => {
+const submitProduct = async (e) => {
+  e.preventDefault()
   if (!validateFields()) {
     console.log("Form contains errors:", errors.value);
     return;
