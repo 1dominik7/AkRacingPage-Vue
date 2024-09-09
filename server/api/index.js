@@ -50,8 +50,8 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(port, async () => {
-  await connect();
+app.listen(port, () => {
+  connect();
   console.log(`Connected to backend, port:${port}.`);
 });
 
