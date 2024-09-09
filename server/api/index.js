@@ -54,3 +54,5 @@ app.listen(port, () => {
   connect();
   console.log(`Connected to backend, port:${port}.`);
 });
+
+export default app;
