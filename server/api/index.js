@@ -2,10 +2,10 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import userRoute from "./routes/userRoutes.js";
-import productRoute from "./routes/productRoutes.js";
-import orderRoute from "./routes/orderRoutes.js";
-import reviewRoute from "./routes/reviewRoutes.js";
+import userRoute from "../src/routes/userRoutes.js";
+import productRoute from "../src/routes/productRoutes.js";
+import orderRoute from "../src/routes/orderRoutes.js";
+import reviewRoute from "../src/routes/reviewRoutes.js";
 import bodyParser from "body-parser";
 import "dotenv/config";
 
