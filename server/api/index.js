@@ -37,9 +37,6 @@ app.use("/api/user", userRoute);
 app.use("/api/products", productRoute);
 app.use("/api/orders", orderRoute);
 app.use("/api/reviews", reviewRoute);
-app.use("/test", (req, res) => {
-  res.send("test Work");
-});
 // app.use("/api/products", productRoute);
 
 app.use((err, req, res, next) => {
